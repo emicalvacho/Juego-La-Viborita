@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ACA13E8E-D139-4B19-A538-B6FFD093D569}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LogicaDelJuego</RootNamespace>
+    <AssemblyName>LogicaDelJuego</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GuardarJuego.cs" />
+    <Compile Include="Jugador.cs" />
+    <Compile Include="Ranking.cs" />
+    <Compile Include="SerializarRanking.cs" />
+    <Compile Include="Tablero_Ayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tablero_Ayuda.Designer.cs">
+      <DependentUpon>Tablero_Ayuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tablero_Ranking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tablero_Ranking.Designer.cs">
+      <DependentUpon>Tablero_Ranking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tablero_Informacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tablero_Informacion.Designer.cs">
+      <DependentUpon>Tablero_Informacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tablero_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tablero_Principal.Designer.cs">
+      <DependentUpon>Tablero_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Juego.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tablero_Conexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tablero_Conexion.Designer.cs">
+      <DependentUpon>Tablero_Conexion.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Tablero_Ayuda.resx">
+      <DependentUpon>Tablero_Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tablero_Conexion.resx">
+      <DependentUpon>Tablero_Conexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tablero_Informacion.resx">
+      <DependentUpon>Tablero_Informacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tablero_Principal.resx">
+      <DependentUpon>Tablero_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Tablero_Ranking.resx">
+      <DependentUpon>Tablero_Ranking.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number_Blocks_01_Set_1_64x64_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\texture-fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-numero-desactivado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-numero-activado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dado5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dado6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dado1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dado2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dado3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dado4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cubilete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manoDerecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manoIzquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\casino-chip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chirimia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chirimia %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chips.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manoDerechaArriba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manoIzquierdaArriba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snake %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poker-chip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textura botones.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_conexion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textura_botones.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textura-de-madera-oscura-47126294.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viejo-grunge-oscuro-fondo-madera-textura_7182-1872.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textura-de-la-tela-del-color-rojo-del-primer-85816168.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red background HQ 01-01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaper_3d-cubes-red-1024x640-c3-81181b-ad1015-dd040b-l-154-a-195-f-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wood-texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tema-casino-dados-rojos-sobre-fondo-transpareent_1314-789.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dados_presentacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snake_conexion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snake_portada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_instrucciones.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_informacion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-to-the-left-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burbuja_dialogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuerina-moto-por-metro-D_NQ_NP_653328-MLA26701034375_012018-F.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\los-dados.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\primero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medalla-de-oro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medalla-de-plata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medalla-de-bronce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\five.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4657f5072972c4b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PIXNIO-192525-900x600.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green-skin-2190694_960_720.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ODR9NT0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textura-azul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\difuminada.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
